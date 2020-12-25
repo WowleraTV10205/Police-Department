@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #2c3e50;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.Controller">
+    <children>
+        <AnchorPane layoutY="163.0" prefHeight="337.0" prefWidth="700.0" style="-fx-background-color: #3498db;">
+            <children>
+                <Button fx:id="NewOfficer" layoutX="548.0" layoutY="297.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="138.0" style="-fx-background-color: #2c3e50;" text="Новый офицер" textFill="#fff100">
+                    <font>
+                        <Font name="Courier New" size="15.0" />
+                    </font>
+                </Button>
+                <TextField fx:id="BadgeField" layoutX="200.0" layoutY="111.0" prefHeight="40.0" prefWidth="300.0" promptText="Номер значка">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </TextField>
+                <PasswordField fx:id="PasswordField" layoutX="200.0" layoutY="187.0" prefHeight="40.0" prefWidth="300.0" promptText="Пароль">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </PasswordField>
+                <Label layoutX="103.0" layoutY="14.0" prefHeight="70.0" prefWidth="497.0" text="ВХОД В СИСТЕМУ" textAlignment="CENTER" textFill="#fff100">
+                    <font>
+                        <Font name="Courier New" size="59.0" />
+                    </font>
+                </Label>
+                <Button fx:id="LoginButton" layoutX="277.0" layoutY="248.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="148.0" style="-fx-background-color: #2c3e50;" text="Войти" textFill="#fff100">
+                    <font>
+                        <Font name="Courier New" size="22.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+        <Label layoutX="14.0" layoutY="14.0" prefHeight="140.0" prefWidth="538.0" text="POLICE DEPARTMENT" textAlignment="CENTER" textFill="#fff100">
+            <font>
+                <Font name="Agency FB" size="81.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="111.0" fitWidth="111.0" layoutX="559.0" layoutY="29.0">
+            <image>
+                <Image url="@police-badge-pngrepo-com.png" />
+            </image>
+        </ImageView>
+    </children>
+</AnchorPane>

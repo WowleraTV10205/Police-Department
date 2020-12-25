@@ -1,0 +1,3 @@
+INSERT INTO `police`.`boat` (`Boat_Num`, `Mark`, `Engine_Num`, `Color`, `Recorder`) VALUES ('69', 'Patrol I', '7539875', 'Blue', '4387989734');
+INSERT INTO `police`.`boat` (`Boat_Num`, `Mark`, `Engine_Num`, `Color`, `Recorder`) VALUES ('213', 'Patrol II', '1239180', 'Black', '5789325021');
+INSERT INTO `police`.`boat` (`Boat_Num`, `Mark`, `Engine_Num`, `Color`, `Recorder`) VALUES ('31', 'Patrol I', '4761201', 'Blue', '9085394801');

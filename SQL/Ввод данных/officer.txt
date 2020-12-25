@@ -1,0 +1,4 @@
+INSERT INTO `police`.`officer` (`Badge`, `Surname`, `Post`, `Enrolment`, `Birthday`) VALUES ('1224', 'Jablonski', 'Detective', '1975-09-11', '1955-05-30', '12345');
+INSERT INTO `police`.`officer` (`Badge`, `Surname`, `Post`, `Enrolment`, `Birthday`) VALUES ('1069', 'Billins', 'Officer I', '1982-05-17', '1960-07-08', '12345');
+INSERT INTO `police`.`officer` (`Badge`, `Surname`, `Post`, `Enrolment`, `Birthday`) VALUES ('4040', 'Irons', 'Capitan', '1950-01-01', '1935-02-04', '12345');
+INSERT INTO `police`.`officer` (`Badge`, `Surname`, `Post`, `Enrolment`, `Birthday`) VALUES ('1277', 'Hutchinson', 'Detective', '1975-09-11', '1958-04-21', '12345');

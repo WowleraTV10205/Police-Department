@@ -1,0 +1,4 @@
+INSERT INTO `police`.`stats` (`ID`, `Officer_Badge`, `Intruders`, `Patrols`) VALUES ('1', '1069', '14', '50');
+INSERT INTO `police`.`stats` (`ID`, `Officer_Badge`, `Intruders`, `Patrols`) VALUES ('2', '1224', '42', '154');
+INSERT INTO `police`.`stats` (`ID`, `Officer_Badge`, `Intruders`, `Patrols`) VALUES ('3', '1277', '42', '154');
+INSERT INTO `police`.`stats` (`ID`, `Officer_Badge`, `Intruders`, `Patrols`) VALUES ('4', '4040', '378', '823');
