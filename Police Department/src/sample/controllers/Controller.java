@@ -1,24 +1,17 @@
 package sample.controllers;
 
-import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 import sample.database.DatabaseHandler;
 import sample.animations.shake;
 import sample.crates.Officer;
 import sample.openNewScene;
-
-
 import javax.swing.*;
 
 public class Controller {
@@ -55,20 +48,7 @@ public class Controller {
         });
 
         NewOfficer.setOnAction(event -> {
-
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/sample/fxmls/NewOfficer.fxml"));
-
-            try {
-                loader.load();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            Parent root = loader.getRoot();
-            Stage stage = new Stage ();
-            stage.setScene (new Scene(root));
-            stage.showAndWait();
+            new openNewScene("/sample/fxmls/NewOfficer.fxml");
         });
     }
 
@@ -91,6 +71,7 @@ public class Controller {
         }
 
         if (counter >=1) {
+            LoginButton.getScene().getWindow().hide();
             new openNewScene("/sample/fxmls/Officers.fxml");
         } else {
             shake officerLoginAnim = new shake (BadgeField);
@@ -100,9 +81,7 @@ public class Controller {
             BadgeField.setStyle("-fx-text-inner-color: red;");
             PasswordField.setStyle("-fx-text-inner-color: red;");
         }
-
     }
-
 }
 
 

@@ -70,6 +70,10 @@ public class Patrols {
     @FXML
     void initialize() {
 
+        NewPatrol.setOnAction(event -> {
+            new openNewScene("/sample/fxmls/NewPatrol.fxml");
+        });
+
         BoatsButton.setOnAction(event -> {
             new openNewScene("/sample/fxmls/Boats.fxml");
         });
@@ -89,24 +93,25 @@ public class Patrols {
         try {
             Connection con = DBConnector.getConnection();
 
-            ResultSet rs = con.createStatement().executeQuery("SELECT patrol.*, `patrol result`.Intruders, `patrol result`.Intruders * district.priority as Reward, `patrol result`.Loss\n" +
-                    "FROM  `patrol result`, patrol, district\n" +
-                    "WHERE (`patrol result`.Patrol_ID=Patrol.ID AND Patrol.District=district.ID);");
+            ResultSet rs = con.createStatement().executeQuery("SELECT patrol.Boat_Num, patrol.District, " +
+                    "patrol.`Start`, patrol. Intruders, patrol.Intruders * district.priority as Reward, patrol.Loss\n" +
+                    "FROM  patrol, district\n" +
+                    "WHERE (Patrol.District=district.ID);");
 
             while (rs.next()) {
-                oblist.add(new Patrol(rs.getString("ID"), rs.getString("boat_Num"), rs.getString("district"), rs.getString("start"), rs.getString("intruders"),rs.getString("reward"),rs.getString("loss")));
+                oblist.add(new Patrol(rs.getString("boat_Num"), rs.getString("district"), rs.getString("start"),
+                        rs.getString("intruders"),rs.getString("loss"),rs.getString("reward")));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
 
-        ID.setCellValueFactory(new PropertyValueFactory<>("ID"));
         Boat_Num.setCellValueFactory(new PropertyValueFactory<>("boat_Num"));
         District.setCellValueFactory(new PropertyValueFactory<>("district"));
         Start.setCellValueFactory(new PropertyValueFactory<>("start"));
         Intruders.setCellValueFactory(new PropertyValueFactory<>("intruders"));
-        Reward.setCellValueFactory(new PropertyValueFactory<>("reward"));
         Loss.setCellValueFactory(new PropertyValueFactory<>("loss"));
+        Reward.setCellValueFactory(new PropertyValueFactory<>("reward"));
 
         table.setItems(oblist);
 

@@ -1,24 +1,15 @@
 package sample.crates;
 
 public class Patrol {
-    String ID, Boat_Num, District, Start, Intruders, Reward, Loss;
+    String Boat_Num, District, Start, Intruders, Loss, Reward;
 
-    public Patrol(String ID, String boat_Num, String district, String start, String intruders, String reward, String loss) {
-        this.ID = ID;
+    public Patrol(String boat_Num, String district, String start, String intruders, String loss, String reward) {
         Boat_Num = boat_Num;
         District = district;
         Start = start;
         Intruders = intruders;
-        Reward = reward;
         Loss = loss;
-    }
-
-    public String getID() {
-        return ID;
-    }
-
-    public void setID(String ID) {
-        this.ID = ID;
+        Reward = reward;
     }
 
     public String getBoat_Num() {
@@ -53,19 +44,19 @@ public class Patrol {
         Intruders = intruders;
     }
 
-    public String getReward() {
-        return Reward;
-    }
-
-    public void setReward(String reward) {
-        Reward = reward;
-    }
-
     public String getLoss() {
         return Loss;
     }
 
     public void setLoss(String loss) {
         Loss = loss;
+    }
+
+    public String getReward() {
+        return Reward;
+    }
+
+    public void setReward(String reward) {
+        Reward = reward;
     }
 }

@@ -79,9 +79,11 @@ public class Stats {
         try {
             Connection con = DBConnector.getConnection();
 
-            ResultSet rs = con.createStatement().executeQuery("SELECT Officer.Badge, Officer.Surname, Officer.Post, SUM(`patrol result`.Intruders) AS Intruders, COUNT(Patrol.ID) AS Patrols\n" +
-                    "FROM stats, Officer, Patrol_Check, Patrol, `patrol result`\n" +
-                    "WHERE (Stats.Officer_Badge = Officer.Badge AND Officer.Badge = Patrol_Check.Officer_Badge AND Patrol_Check.patrol_ID=Patrol.ID AND Patrol.ID = `patrol result`.patrol_id)\n" +
+            ResultSet rs = con.createStatement().executeQuery("SELECT Officer.Badge, Officer.Surname, " +
+                    "Officer.Post, SUM(patrol.Intruders) AS Intruders, COUNT(Patrol.ID) AS Patrols\n" +
+                    "FROM stats, Officer, Patrol_Check, Patrol\n" +
+                    "WHERE (Stats.Officer_Badge = Officer.Badge AND Officer.Badge = Patrol_Check.Officer_Badge " +
+                    "AND Patrol_Check.patrol_ID=Patrol.ID)\n" +
                     "GROUP BY Officer.Badge;");
 
             while (rs.next()) {
