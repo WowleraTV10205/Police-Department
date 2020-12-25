@@ -53,8 +53,8 @@ public class DatabaseHandler extends Configs{
         String insert = "INSERT INTO " + Const.PATROLS_TABLE + "(" +
                 Const.PATROLS_BOAT_NUM + "," + Const.PATROLS_DISTRICT + "," +
                 Const.PATROLS_START + "," + Const.PATROLS_INTRUDERS + "," +
-                Const.PATROLS_LOSS + "," + Const.PATROLS_REWARD + ")" +
-                "VALUES(?,?,?,?,?,?)";
+                Const.PATROLS_LOSS + ")" +
+                "VALUES(?,?,?,?,?)";
         try {
             PreparedStatement prST = getDbConnection().prepareStatement(insert);
             prST.setString (1,patrol.getBoat_Num());
@@ -62,7 +62,6 @@ public class DatabaseHandler extends Configs{
             prST.setString (3,patrol.getStart());
             prST.setString (4,patrol.getIntruders());
             prST.setString (5,patrol.getLoss());
-            prST.setString (6,patrol.getReward());
             prST.executeUpdate();
 
             JOptionPane.showMessageDialog(null, "Информация о патруле успешно добавлена!");

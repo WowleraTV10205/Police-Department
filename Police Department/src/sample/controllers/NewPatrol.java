@@ -49,7 +49,7 @@ public class NewPatrol {
         String Start = StartField.getText();
         String Intruders = IntrudersField.getText();
         String Loss = LossField.getText();
-        String Reward = "NULL";
+        String Reward = DistrictField.getText();
 
         Patrol patrol = new Patrol(Boat_Num, District, Start, Intruders, Loss, Reward);
 
