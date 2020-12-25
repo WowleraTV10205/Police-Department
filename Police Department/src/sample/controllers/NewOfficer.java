@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import sample.database.DatabaseHandler;
 import sample.crates.Officer;
+import sample.openNewScene;
 
 public class NewOfficer {
 
@@ -41,6 +42,8 @@ public class NewOfficer {
     void initialize() {
         RegistButton.setOnAction(event -> {
             addNewOfficer();
+            RegistButton.getScene().getWindow().hide();
+            new openNewScene("/sample/fxmls/Controller.fxml");
         });
      }
 

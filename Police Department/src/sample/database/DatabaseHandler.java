@@ -1,5 +1,6 @@
 package sample.database;
 
+import sample.crates.AddCheck;
 import sample.crates.Officer;
 import sample.crates.Patrol;
 
@@ -62,6 +63,23 @@ public class DatabaseHandler extends Configs{
             prST.setString (3,patrol.getStart());
             prST.setString (4,patrol.getIntruders());
             prST.setString (5,patrol.getLoss());
+            prST.executeUpdate();
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void NewCheck(AddCheck addcheck) {
+        String insert = "INSERT INTO " + Const.ADDCHECK_TABLE + "(" +
+                Const.ADDCHECK_BADGE + "," + Const.ADDCHECK_PATROL_ID + ")" +
+                "VALUES(?,?)";
+        try {
+            PreparedStatement prST = getDbConnection().prepareStatement(insert);
+            prST.setString (1,addcheck.getBadge());
+            prST.setString (2,addcheck.getPatrol_ID());
             prST.executeUpdate();
 
             JOptionPane.showMessageDialog(null, "Информация о патруле успешно добавлена!");

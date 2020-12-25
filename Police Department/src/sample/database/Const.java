@@ -17,4 +17,8 @@ public class Const {
     public static final String PATROLS_LOSS = "Loss";
     public static final String PATROLS_REWARD = "Reward";
 
+    public static final String ADDCHECK_TABLE = "patrol_check";
+    public static final String ADDCHECK_BADGE = "Officer_Badge";
+    public static final String ADDCHECK_PATROL_ID = "Patrol_ID";
+
 }

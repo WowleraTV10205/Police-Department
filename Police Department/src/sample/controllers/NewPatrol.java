@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import sample.crates.Patrol;
 import sample.database.DatabaseHandler;
+import sample.openNewScene;
 
 public class NewPatrol {
 
@@ -38,6 +39,8 @@ public class NewPatrol {
     void initialize() {
         AddPatrol.setOnAction(event -> {
             addNewPatrol();
+            AddPatrol.getScene().getWindow().hide();
+            new openNewScene("/sample/fxmls/Patrol_Checks.fxml");
         });
     }
 
